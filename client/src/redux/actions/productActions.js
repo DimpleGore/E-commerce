@@ -9,7 +9,8 @@ export const getProducts = (val, category) => async (dispatch) => {
 
     const content = data.filter(
       (data) =>
-        data.name.toUpperCase().startsWith(val.toUpperCase()) &&
+       ( data.name.toUpperCase().startsWith(val.toUpperCase()) ||
+        data.category.toUpperCase().startsWith(val.toUpperCase())) &&
         data.category.toUpperCase().startsWith(category.toUpperCase())
     );
     console.log(content)

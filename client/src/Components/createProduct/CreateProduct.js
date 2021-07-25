@@ -35,6 +35,7 @@ function CreateProduct(props) {
       products.forEach((product) => {
         if (product._id === param.id) {
           setProduct(product);
+          console.log(product)
           setImages(product.images);
         }
       });

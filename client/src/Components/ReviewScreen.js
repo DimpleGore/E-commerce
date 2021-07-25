@@ -74,7 +74,7 @@ function ReviewScreen(props) {
     const { amount, id: order_id, currency } = result.data;
 
     const options = {
-      key: "rzp_test_aCN4gpCEkz1jlL", // Enter the Key ID generated from the Dashboard
+      key: process.env.RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
       amount: amount.toString(),
       currency: currency,
       name: "Smart Corp Limited",

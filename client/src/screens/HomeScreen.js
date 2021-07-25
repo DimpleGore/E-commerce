@@ -2,6 +2,10 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getProducts as listProducts } from "../redux/actions/productActions";
+import {Pagination} from 'antd'
+import "antd/dist/antd.css";
+
+
 
 import { GlobalState } from "../GlobalState";
 import React, { useContext } from "react";
@@ -63,6 +67,7 @@ function HomeScreen(props) {
             ))}
         </div>
       </div>
+      
     </div>
   );
 }

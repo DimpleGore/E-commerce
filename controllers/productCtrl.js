@@ -1,5 +1,5 @@
-const Products = require("../models/productModel");
-
+const Products = require('../models/productModel');
+require("dotenv").config();
 const productCtrl = {
   
   getProducts: async (req, res) => {
@@ -17,6 +17,7 @@ const productCtrl = {
   getProductById: async (req, res) => {
     try {
       const product = await Products.findById(req.params.id);
+      console.log(product)
 
       res.json(product);
     } catch (err) {
@@ -59,14 +60,17 @@ const productCtrl = {
     }
   },
   updateProduct: async (req, res) => {
+    console.log('edit')
     try {
-      const { title, price, description, content, images, category } = req.body;
+      const { name, price, description, countInStock, images, category } = req.body;
+      console.log(name, price, description, countInStock, images, category )
       if (!images) return res.status(400).json({ msg: "No image upload" });
 
-      await Products.findOneAndUpdate(
+     const pro= await Products.findOneAndUpdate(
         { _id: req.params.id },
-        { title, price, description, content, images, category }
+        { name, price, description, countInStock, images, category }
       );
+      console.log(pro)
       res.json({ msg: "Updated a Product" });
     } catch (err) {
       res.status(500).json({ msg: err.message });

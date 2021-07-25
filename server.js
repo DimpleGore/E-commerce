@@ -25,9 +25,10 @@ app.use("/api", require("./routes/upload"));
 app.use("/api", require("./routes/adminRouter"));
 app.use("/payment", require("./routes/paymentRouter"))
 
-var mongodb_URL = "mongodb://127.0.0.1/Dimple";
+//var mongodb_URL = "mongodb://127.0.0.1/Dimple";
 mongoose.connect(
-  mongodb_URL,
+  process.env.MONGODB_URI || 'mongodb+srv://Dimple:Dimplegore@975@dimple.llwb2.mongodb.net/myFirst?retryWrites=true&w=majority',
+  
   {
     useCreateIndex: true,
     useFindAndModify: false,
@@ -40,6 +41,11 @@ mongoose.connect(
 );
 
 const PORT = process.env.Port || 5000;
+
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'))
+}
+
 app.listen(PORT, () => {
   console.log("Server is running on port", PORT);
 });
