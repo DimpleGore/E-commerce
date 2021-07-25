@@ -61,7 +61,7 @@ function ReviewScreen(props) {
     }
 
     // creating a new order
-    const result = await axios.post("http://localhost:5000/payment/orders", {
+    const result = await axios.post("http://localhost:6000/payment/orders", {
       price: getCartSubTotal(),
     });
 
@@ -91,12 +91,12 @@ function ReviewScreen(props) {
         };
 
         const result = await axios.post(
-          "http://localhost:5000/payment/verification",
+          "http://localhost:6000/payment/verification",
           data
         );
 
         const res = await axios.post(
-          "http://localhost:5000/payment/capture",
+          "http://localhost:6000/payment/capture",
           data,
           {
             headers: { Authorization: token },
