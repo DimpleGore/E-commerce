@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const fileUpload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
+//const path = require("path")
 
 
 const app = express();
@@ -48,6 +49,11 @@ const port = process.env.PORT || 5000;
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'))
 }
+
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 
 app.listen(port, () => {
   console.log("Server is running on port", port);
