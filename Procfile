@@ -1,1 +1,1 @@
-web:nodemon --watch ../e-commerce --exec babel-node  ./server.js
+web:node server.js
