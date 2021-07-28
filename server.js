@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const fileUpload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
-const bodyParser = require("body-parser");
+
 
 const app = express();
 app.use(express.json());
@@ -40,12 +40,12 @@ mongoose.connect(
   }
 );
 
-const PORT = process.env.Port || 6000;
+const port = process.env.PORT || 6000;
 
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'))
 }
 
 app.listen(PORT, () => {
-  console.log("Server is running on port", PORT);
+  console.log("Server is running on port", port);
 });

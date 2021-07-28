@@ -11,7 +11,7 @@ const authAdmin = require("../middleware/authAdmin");
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_API_KEY,
-  api_secret: process.env.Cloud_API_SECRET,
+  api_secret: process.env.ClOUD_API_SECRET,
 });
 
 router.post("/upload", auth, authAdmin, async (req, res) => {
