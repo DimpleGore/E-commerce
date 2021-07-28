@@ -48,10 +48,10 @@ function App() {
 
           <Route exact path="/product/:id" component={ProductScreen} />
           <Route exact path="/cart" component={CartScreen} />
-          <Route path="/login" component={isLogged ? NotFound : Login} />
+          <Route path="/login" component={Login} />
           <Route
             path="/register"
-            component={isLogged ? NotFound : Register}
+            component={Register}
           />
           <Route
             exact
