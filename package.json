@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+  "node": "12.13.0",
+  "npm": "6.12.0"
+},
   "scripts": {
     "build": "cd client && npm run build",
     "install-client": "cd client && npm install",
@@ -11,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/DimpleGore/E-commerce.git"
   },
   "author": "",
   "license": "ISC",

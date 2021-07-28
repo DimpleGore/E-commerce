@@ -40,7 +40,11 @@ mongoose.connect(
   }
 );
 
+<<<<<<< HEAD
 const port = process.env.PORT || 6000;
+=======
+const port= process.env.PORT || 6000;
+>>>>>>> f59dc72d13eeb881570185f1a7e9345f28412695
 
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'))
