@@ -19,7 +19,7 @@ function Login() {
   const loginSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/user/login", { ...user });
+      await axios.post("https://e-commerce123456.herokuapp.com/user/login", { ...user });
       localStorage.setItem("firstLogin", true);
 
       window.location.href = "/";
